@@ -1,0 +1,27 @@
+﻿<Window x:Class="TelopTool.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TelopTool"
+        mc:Ignorable="d"
+        Title="MainWindow" 
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ResizeMode="CanResizeWithGrip"
+        Topmost="True"
+        Height="50" Width="250">
+    <Grid>
+        <Viewbox>
+            <TextBox Text="HOGE" FontFamily="游ゴシック" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                     BorderBrush="Transparent" Background="Transparent" SelectionBrush="Transparent"
+                     x:Name="main">
+                <TextBox.BitmapEffect>
+                    <DropShadowBitmapEffect Color="White" ShadowDepth="0" Softness="0.2" />
+                </TextBox.BitmapEffect>
+            </TextBox>
+        </Viewbox>
+    </Grid>
+</Window>
+ 

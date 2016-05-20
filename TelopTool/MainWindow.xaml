@@ -11,7 +11,7 @@
         Background="Transparent"
         ResizeMode="CanResizeWithGrip"
         Topmost="True"
-        Height="50" Width="250">
+        Height="50" Width="250" Icon="asset/Icon.png">
     <Grid>
         <Viewbox>
             <TextBox Text="HOGE" FontFamily="游ゴシック" HorizontalAlignment="Center" VerticalAlignment="Center" 

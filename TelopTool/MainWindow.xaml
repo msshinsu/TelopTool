@@ -15,7 +15,7 @@
     <Grid>
         <Viewbox>
             <TextBox Text="HOGE" FontFamily="游ゴシック" HorizontalAlignment="Center" VerticalAlignment="Center" 
-                     BorderBrush="Transparent" Background="Transparent" SelectionBrush="Transparent"
+                     BorderBrush="Transparent" Background="Transparent" SelectionBrush="#7F0000FF"
                      x:Name="main">
                 <TextBox.BitmapEffect>
                     <DropShadowBitmapEffect Color="White" ShadowDepth="0" Softness="0.2" />

@@ -28,7 +28,6 @@ namespace TelopTool
             this.MouseLeftButtonDown += (sender, e) => { this.DragMove(); };
             this.MouseEnter += (sender, e) => { this.Background = new SolidColorBrush(Color.FromArgb(10, 200, 200, 200)); };
             this.MouseLeave += (sender, e) => { this.Background = new SolidColorBrush(Colors.Transparent); };
-
         }
     }
 }

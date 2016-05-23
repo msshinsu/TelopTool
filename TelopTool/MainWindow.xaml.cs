@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace TelopTool
 {
@@ -21,6 +22,9 @@ namespace TelopTool
     /// </summary>
     public partial class MainWindow : Window
     {
+        [DllImport("user32")]
+        static extern short GetAsyncKeyState(Keys vKey);
+
         public MainWindow()
         {
             InitializeComponent();
@@ -28,6 +32,26 @@ namespace TelopTool
             this.MouseLeftButtonDown += (sender, e) => { this.DragMove(); };
             this.MouseEnter += (sender, e) => { this.Background = new SolidColorBrush(Color.FromArgb(10, 200, 200, 200)); };
             this.MouseLeave += (sender, e) => { this.Background = new SolidColorBrush(Colors.Transparent); };
+            // テキスト初期化
+            this.main.Text = "Telop";
+            // 入力チェック
+            Task.Factory.StartNew(() => chkKey());
+        }
+
+        private void chkKey()
+        {
+            while(true)
+            {
+                if (GetAsyncKeyState(Keys.LWin) < 0 && GetAsyncKeyState(Keys.W) < 0)
+                {
+                    Dispatcher.Invoke(() =>
+                    {
+                        this.Activate();
+                        this.main.Focus();
+                        this.main.SelectAll();
+                    });
+                }
+            }
         }
     }
 }
